@@ -1,7 +1,7 @@
 import { SplashScreen } from 'components/common';
 import { DashboardPage } from 'features/dashboard/pages';
 import { MasterDataPage } from 'features/masterData/pages';
-import { OrderManagementPage } from 'features/oms/pages';
+import OrderManagementPage from 'features/oms/pages';
 import UsersIndexPage from 'features/users/pages';
 import React, { Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';

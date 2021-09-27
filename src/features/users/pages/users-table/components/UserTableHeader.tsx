@@ -1,14 +1,17 @@
-import { useAppSelector } from 'app/hooks';
-import { CheckBox } from 'components/FormFields';
-import { useMemo } from 'react';
-import { useUsersUIContext } from '../../../_hook/userUIContext';
+import { useAppSelector } from "store";
+import { CheckBox } from "components/FormFields";
+import { useMemo } from "react";
+import { useUsersUIContext } from "../../../_hook/userUIContext";
 
 interface UserTableHeaderProps {
   onCheckboxClick?: (event: any) => void;
   checked?: boolean;
 }
 
-export const UserTableHeader = ({ onCheckboxClick, checked }: UserTableHeaderProps) => {
+export const UserTableHeader = ({
+  onCheckboxClick,
+  checked,
+}: UserTableHeaderProps) => {
   const { list } = useAppSelector((state) => state.user);
   const usersUIContext = useUsersUIContext();
 
@@ -22,7 +25,7 @@ export const UserTableHeader = ({ onCheckboxClick, checked }: UserTableHeaderPro
   const checkAll = (e: any) => {
     if (e.target.checked) {
       let listIds: string[] = [];
-      list.forEach((item) => listIds.push(item.id || ''));
+      list.forEach((item) => listIds.push(item.id || ""));
       usersUIProps.setIds(listIds);
       return;
     }
@@ -30,7 +33,7 @@ export const UserTableHeader = ({ onCheckboxClick, checked }: UserTableHeaderPro
   };
 
   return (
-    <tr className="border-b border-gray-200 dark:border-gray-800  text-sm ">
+    <tr className="border-b border-gray-200 dark:border-gray-800 dark:text-white  text-sm ">
       <th className="font-medium text-left pr-10 pl-4">Username</th>
       <th className="font-medium text-left pr-10">First name</th>
       <th className="font-medium text-left pr-12">Last name</th>

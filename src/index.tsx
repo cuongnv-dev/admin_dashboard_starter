@@ -1,5 +1,4 @@
-import { setupAxios } from 'api/setupAxios';
-import { mockAxios } from 'api/__mocks__/mockAxios';
+import { setupAxios, mockAxios } from 'api';
 import axios from 'axios';
 import { SplashScreen } from 'components/common';
 import { ConnectedRouter } from 'connected-react-router';
@@ -9,9 +8,9 @@ import { Provider } from 'react-redux';
 import { ToastClassName, ToastContainer } from 'react-toastify';
 import { PersistGate } from 'redux-persist/integration/react';
 import { history } from 'utils';
-import '../src/i18n/i18n';
+import './i18n/i18n';
 import App from './App';
-import { persistor, store } from './app/store';
+import { persistor, store } from './store/store';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'react-toastify/dist/ReactToastify.min.css';

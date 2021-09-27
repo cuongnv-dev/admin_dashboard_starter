@@ -1,8 +1,8 @@
-import { authApi } from 'api/auth.api';
-import { useAppDispatch, useAppSelector } from 'app/hooks';
+import { authApi } from 'api';
+import { useAppDispatch, useAppSelector } from 'store';
 import { useEffect, useRef, useState } from 'react';
 import { connect, shallowEqual } from 'react-redux';
-import { SplashScreen } from '../../../components/common';
+import { SplashScreen } from 'components/common';
 import { authActions } from './authSlice';
 
 function AuthInit({ children }: { children: React.ReactNode }) {

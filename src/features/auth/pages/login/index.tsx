@@ -1,5 +1,5 @@
-import { authApi } from 'api/auth.api';
-import { useAppDispatch } from 'app/hooks';
+import { authApi } from 'api';
+import { useAppDispatch } from 'store';
 import { authActions } from 'features/auth/_redux/authSlice';
 import { LoginParams } from 'models';
 import React, { useState } from 'react';

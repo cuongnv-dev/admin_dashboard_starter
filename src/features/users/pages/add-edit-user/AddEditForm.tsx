@@ -1,26 +1,26 @@
-import { User } from 'models';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { InputField } from 'components/FormFields';
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
-import { Button } from 'components/common';
-import { Link } from 'react-router-dom';
-import { ChevronLeftIcon } from '@heroicons/react/solid';
-import { RefreshIcon, SaveIcon } from '@heroicons/react/outline';
+import { User } from "models";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { InputField } from "components/FormFields";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { Button } from "components/common";
+import { Link } from "react-router-dom";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
+import { RefreshIcon, SaveIcon } from "@heroicons/react/outline";
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const schema = yup.object().shape({
-  email: yup.string().required().email('Invalid email format'),
-  username: yup.string().required('Please enter email.'),
+  email: yup.string().required().email("Invalid email format"),
+  username: yup.string().required("Please enter email."),
   password: yup
     .string()
-    .required('Please enter password')
-    .min(8, 'Password must be at least 8 characters'),
-  firstname: yup.string().required('Please enter first name'),
-  lastname: yup.string().required('Please enter last name'),
-  phone: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+    .required("Please enter password")
+    .min(8, "Password must be at least 8 characters"),
+  firstname: yup.string().required("Please enter first name"),
+  lastname: yup.string().required("Please enter last name"),
+  phone: yup.string().matches(phoneRegExp, "Phone number is not valid"),
 });
 
 export interface UserFormProps {
@@ -29,7 +29,7 @@ export interface UserFormProps {
 }
 
 export const UserForm = ({ initialValues, onSubmit }: UserFormProps) => {
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string>("");
   const {
     control,
     handleSubmit,
@@ -43,7 +43,7 @@ export const UserForm = ({ initialValues, onSubmit }: UserFormProps) => {
   const handleFormSubmit = async (formValues: User) => {
     try {
       // Clear previous submission error
-      setError('');
+      setError("");
       await onSubmit?.(formValues);
     } catch (error) {
       setError(error.message);
@@ -58,7 +58,12 @@ export const UserForm = ({ initialValues, onSubmit }: UserFormProps) => {
     <>
       <div className="flex flex-row flex-wrap">
         <div className="w-full md:w-1/2 lg:w-1/3 md:pr-2">
-          <InputField name="email" control={control} label="Email" placeholder="enter email" />
+          <InputField
+            name="email"
+            control={control}
+            label="Email"
+            placeholder="enter email"
+          />
         </div>
         <div className="w-full md:w-1/2 lg:w-1/3 md:px-2">
           <InputField
@@ -103,7 +108,7 @@ export const UserForm = ({ initialValues, onSubmit }: UserFormProps) => {
       </div>
       <div className="flex flex-row gap-4 py-1 mt-6 justify-end">
         <Button preset="outline">
-          <Link to={'/users'} className="flex flex-row">
+          <Link to={"/users"} className="flex flex-row">
             <ChevronLeftIcon className="w-4 h4  mx-auto" />
             <span className="text-xs ml-2 font-medium">Go back</span>
           </Link>

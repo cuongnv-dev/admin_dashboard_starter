@@ -25,7 +25,6 @@ export function InputField({
     name,
     control,
   });
-  // console.log(`value`, name, value);
   return (
     <InputContainer>
       <InputLabel htmlFor={name}>{label}</InputLabel>

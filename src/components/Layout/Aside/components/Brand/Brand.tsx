@@ -1,5 +1,5 @@
 import { MenuAlt2Icon, MenuAlt3Icon } from '@heroicons/react/solid';
-import { useThemeContext } from 'app/themeContext';
+import { useThemeContext } from 'store';
 import logo from '../../../../../assets/images/logo.png';
 import { BrandContainer, Logo } from './styles';
 
@@ -8,7 +8,7 @@ export const Brand = () => {
 
   if (!viewFull)
     return (
-      <div className="h-16 text-gray-500 dark:text-gray-200 flex justify-center ">
+      <div className="h-16 text-gray-500 dark:text-second-dark  flex justify-center ">
         <button onClick={() => setViewFull(!viewFull)}>
           <MenuAlt2Icon className="w-7 " />
         </button>

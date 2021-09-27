@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import styled from "styled-components";
+import tw from "twin.macro";
 
 export const HeaderContainer = styled.div`
-  ${tw`fixed bg-gray-100 dark:bg-black-dark h-16 top-0 right-0 z-10 w-full pr-4 md:pr-6`};
+  ${tw`fixed bg-white dark:bg-black-lighter h-16 top-0 right-0 z-10 w-full pr-4 md:pr-6`};
 `;
 
 export const HeaderContent = styled.div`
@@ -23,5 +23,5 @@ export const ButtonRow = styled.div`
   ${tw`flex flex-row items-center`};
 `;
 export const IconButton = styled.button`
-  ${tw`w-10 h-10 ml-3 dark:bg-gray-700 rounded-xl bg-white shadow-sm hover:text-green-500`};
+  ${tw`w-10 h-10 ml-3  rounded-xl hover:text-green-500`};
 `;

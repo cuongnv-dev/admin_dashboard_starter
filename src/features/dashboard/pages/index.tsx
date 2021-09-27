@@ -1,4 +1,4 @@
-import { useAppSelector } from 'app/hooks';
+import { useAppSelector } from 'store';
 import { useLocation } from 'react-router-dom';
 
 export const DashboardPage = () => {

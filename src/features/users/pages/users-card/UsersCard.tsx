@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from 'app/hooks';
+import { useAppDispatch, useAppSelector } from 'store';
 import { Button } from 'components/common';
 import { PageContainer, PageContent, PageHeaderContainer, PageTitle } from 'components/Layout';
 import { SelectedItemActions } from 'components/Layout/Table/components/selectedItemAction';
@@ -32,7 +32,6 @@ export function UsersCard() {
   const handleFilterChange = (newFilter: ListParams) => {
     dispatch(userActions.setFilter(newFilter));
   };
-  console.log(filter);
   return (
     <PageContainer>
       <PageContent>

@@ -21,7 +21,7 @@ export const FilterListBox = ({ options, onChange }: FilterListBoxProps) => {
       value={selectedOption}
       onChange={(option: SelectOption) => handleOnSelectChange(option)}
     >
-      <div className="relative mt-1">
+      <div className="relative mt-2">
         <Listbox.Button className="relative h-10 w-full py-2 pl-3 pr-10 text-sm text-left bg-transparent rounded-lg border border-gray-200 dark:border-gray-700 focus:ring focus:ring-green-500 focus:ring-opacity-40">
           <span className="block truncate">{selectedOption.label}</span>
           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">

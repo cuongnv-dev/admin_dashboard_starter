@@ -1,4 +1,4 @@
-import { useThemeContext } from 'app/themeContext';
+import { useThemeContext } from 'store';
 import { SCREENS } from 'constants/common';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import { Header } from '../Header';
 
 const Screen = styled.div`
   ${tw`
-    min-h-screen md:flex text-gray-700 dark:text-gray-300 text-sm  bg-gray-100 dark:bg-black-dark
+    min-h-screen md:flex text-gray-700 dark:text-gray-400 text-sm  bg-gray-100 dark:bg-black-dark
   `}
 `;
 

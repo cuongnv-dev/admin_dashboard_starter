@@ -5,7 +5,7 @@
  * components (e.g: `src/app/modules/Auth/pages/AuthPage`, `src/app/BasePage`).
  */
 
-import { useAppSelector } from 'app/hooks';
+import { useAppSelector } from 'store';
 import { ErrorPage } from 'components/common';
 import { AdminLayout } from 'components/Layout';
 import { LoginPage } from 'features/auth/pages';
@@ -21,7 +21,6 @@ export function Routes() {
     }),
     shallowEqual
   );
-  console.log(`isAuthorized`, isAuthorized);
   return (
     <Switch>
       {!isAuthorized ? (

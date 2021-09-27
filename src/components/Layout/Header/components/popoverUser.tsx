@@ -1,11 +1,10 @@
+import { useAppDispatch, useAppSelector } from 'store';
+import { authActions } from 'features/auth/_redux/authSlice';
 import { Popover, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
-import { Fragment } from 'react';
-import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { ClipboardListIcon, MailIcon, UserIcon } from '@heroicons/react/solid';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../../common';
-import { authActions } from 'features/auth/_redux/authSlice';
 
 const solutions = [
   {

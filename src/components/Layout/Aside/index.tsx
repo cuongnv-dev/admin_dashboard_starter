@@ -1,7 +1,7 @@
-import { ChartBarIcon, CogIcon, ShoppingCartIcon, UserIcon } from '@heroicons/react/outline';
-import { useThemeContext } from 'app/themeContext';
+import { ChartBarIcon, CogIcon, ShoppingCartIcon, UserIcon } from '@heroicons/react/solid';
+import { useThemeContext } from 'store';
 import { useLocation } from 'react-router-dom';
-import { checkIsActive } from 'utils/helper';
+import { checkIsActive } from 'utils';
 import { Brand } from './components/Brand/Brand';
 import {
   AsideContainer,
@@ -31,9 +31,9 @@ export const Aside = () => {
               <AsideItemBorder active={activeDashboard}></AsideItemBorder>
 
               <ChartBarIcon
-                className={`transition-all duration-200 text-gray-400 group-hover:text-green-300 ${
-                  activeDashboard ? 'text-green-300' : ''
-                } ${viewFull ? 'ml-8 w-4 h-4 ' : 'ml-6 w-5 h-5 '}`}
+                className={`transition-all duration-200 text-gray-400 group-hover:text-green-500 w-6 h-6 ${
+                  activeDashboard ? 'text-green-500' : ''
+                } ${viewFull ? 'ml-8' : 'ml-6'}`}
               />
               {viewFull && <AsideItemLabel active={activeDashboard}>Dashboard</AsideItemLabel>}
             </AsideItem>
@@ -44,9 +44,9 @@ export const Aside = () => {
               <AsideItemBorder active={activeUsers}></AsideItemBorder>
 
               <UserIcon
-                className={`transition-all duration-200 text-gray-400 group-hover:text-green-300 ${
-                  activeUsers ? 'text-green-300' : ''
-                } ${viewFull ? 'ml-8 w-4 h-4 ' : 'ml-6 w-5 h-5 '}`}
+                className={`transition-all duration-200 text-gray-400 group-hover:text-green-500 w-6 h-6 ${
+                  activeUsers ? 'text-green-500' : ''
+                } ${viewFull ? 'ml-8' : 'ml-6'}`}
               />
               {viewFull && <AsideItemLabel active={activeUsers}>Users</AsideItemLabel>}
             </AsideItem>
@@ -57,9 +57,9 @@ export const Aside = () => {
               <AsideItemBorder active={activeOrders}></AsideItemBorder>
 
               <ShoppingCartIcon
-                className={`transition-all duration-200 text-gray-400 group-hover:text-green-300 ${
-                  activeOrders ? 'text-green-300' : ''
-                } ${viewFull ? 'ml-8 w-4 h-4 ' : 'ml-6 w-5 h-5 '}`}
+                className={`transition-all duration-200 text-gray-400 group-hover:text-green-500 w-6 h-6 ${
+                  activeOrders ? 'text-green-500' : ''
+                } ${viewFull ? 'ml-8' : 'ml-6'}`}
               />
               {viewFull && <AsideItemLabel active={activeOrders}>Orders</AsideItemLabel>}
             </AsideItem>
@@ -70,9 +70,9 @@ export const Aside = () => {
               <AsideItemBorder active={activeSettings}></AsideItemBorder>
 
               <CogIcon
-                className={`transition-all duration-200 text-gray-400 group-hover:text-green-300 ${
-                  activeSettings ? 'text-green-300' : ''
-                } ${viewFull ? 'ml-8 w-4 h-4 ' : 'ml-6 w-5 h-5 '}`}
+                className={`transition-all duration-200 text-gray-400 group-hover:text-green-500 w-6 h-6 ${
+                  activeSettings ? 'text-green-500' : ''
+                } ${viewFull ? 'ml-8' : 'ml-6'}`}
               />
               {viewFull && <AsideItemLabel active={activeSettings}>Settings</AsideItemLabel>}
             </AsideItem>

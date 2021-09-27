@@ -1,6 +1,6 @@
-import { ThemeContext } from 'app/themeContext';
+import { ThemeContext } from 'store';
 import React, { useState } from 'react';
-import { Routes } from 'Routes';
+import { Routes } from './Routes';
 import AuthInit from './features/auth/_redux/authInit';
 function App() {
   const [viewFull, setViewFull] = useState<boolean>(true);

@@ -1,4 +1,4 @@
-import { userApi } from 'api/user.api';
+import { userApi } from 'api';
 import { PageContainer, PageContent, PageHeaderContainer, PageTitle } from 'components/Layout';
 import { User } from 'models';
 import { useEffect, useState } from 'react';

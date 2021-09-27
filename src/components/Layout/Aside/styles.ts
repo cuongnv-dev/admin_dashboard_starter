@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import tw from "twin.macro";
+import { NavLink } from "react-router-dom";
 
 export const AsideContainer = styled.div`
   ${tw`
     shadow-sm
     bg-white
-    dark:bg-black-dark
+    dark:bg-black-lighter
     fixed
     h-screen
     top-0
@@ -17,9 +17,6 @@ export const AsideContainer = styled.div`
     z-30
     text-gray-500
     dark:text-gray-300
-    border-r-0
-    dark:border-r
-    dark:border-gray-700
   `};
   ${({ viewFull }: any) => (viewFull ? tw`w-56` : tw`w-20`)}
 ` as any;
@@ -43,7 +40,7 @@ export const AsideItemBorder = styled.div`
 ` as any;
 
 export const AsideItemLabel = styled.span`
-  ${tw`ml-4 text-sm truncate transition-all duration-200`};
+  ${tw`ml-4 text-sm text-second-dark  truncate transition-all duration-200`};
   ${({ active }: any) => (active ? tw`text-green-500` : tw``)}
 ` as any;
 

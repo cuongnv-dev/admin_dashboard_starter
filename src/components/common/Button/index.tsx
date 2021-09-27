@@ -1,9 +1,8 @@
-import { ButtonProps } from './button.props';
+import { t } from 'i18n/translation';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { t } from 'i18n/translation';
-import { Link } from 'react-router-dom';
 import { Spinner } from '../Spinner';
+import { ButtonProps } from './button.props';
 
 const BaseButton = styled.button`
   ${tw`

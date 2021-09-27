@@ -1,14 +1,14 @@
-import React from 'react';
-import { Route, useHistory } from 'react-router-dom';
-import { UsersUIEvent, UsersUIProvider } from '../_hook/userUIContext';
-import { UserDeleteDialog } from './user-delete-dialog/UserDeleteDialog';
-import { UsersCard } from './users-card/UsersCard';
+import React from "react";
+import { Route, useHistory } from "react-router-dom";
+import { UsersUIEvent, UsersUIProvider } from "../_hook/userUIContext";
+import { UserDeleteDialog } from "./user-delete-dialog/UserDeleteDialog";
+import { UsersCard } from "./users-card/UsersCard";
 
 export function UsersPage() {
   const history = useHistory();
   const usersUIEvents: UsersUIEvent = {
     newUserButtonClick: () => {
-      history.push('/users/new');
+      history.push("/users/new");
     },
     openEditUserPage: (id: string) => {
       history.push(`/users/${id}/edit`);
@@ -20,7 +20,7 @@ export function UsersPage() {
       history.push(`/users/deleteUsers`);
     },
     openUpdateUsersStatusDialog: () => {
-      history.push('/users/updateStatus');
+      history.push("/users/updateStatus");
     },
   };
 
@@ -42,7 +42,7 @@ export function UsersPage() {
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push('/users');
+              history.push("/users");
             }}
           />
         )}

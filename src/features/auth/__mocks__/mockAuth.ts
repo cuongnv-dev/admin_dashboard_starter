@@ -1,6 +1,6 @@
 import { userTableMock } from './userTableMock';
 import MockAdapter from 'axios-mock-adapter';
-import { LOGIN_URL, ME_URL } from 'api/auth.api';
+import { LOGIN_URL, ME_URL } from 'api';
 
 export default function mockAuth(mock: MockAdapter) {
   mock.onPost(LOGIN_URL).reply(({ data }) => {

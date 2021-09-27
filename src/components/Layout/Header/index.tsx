@@ -1,9 +1,9 @@
 import { BellIcon, MoonIcon, SunIcon } from '@heroicons/react/outline';
-import useDarkMode from 'app/useDarkMode';
+import { useDarkMode } from 'store';
 import { words } from 'lodash';
 import moment from 'moment';
 import { useLocation } from 'react-router-dom';
-import { appRoutes } from '../../../constants/common';
+import { appRoutes } from 'constants/common';
 import { PopoverUser } from './components/popoverUser';
 import {
   ButtonRow,
@@ -29,7 +29,7 @@ export const Header = ({ paddingLeft }: { paddingLeft: string }) => {
     <HeaderContainer>
       <HeaderContent className={`${paddingLeft}`}>
         <TitleContainer>
-          <Title className="">{appRoutes[paths[0] as keyof typeof appRoutes]}</Title>
+          <Title className="dark:text-white">{appRoutes[paths[0] as keyof typeof appRoutes]}</Title>
           <Time>
             <span className="text-green-500">{dayOfWeek}</span>
             <span>{`, ${currentDay}`}</span>
@@ -37,15 +37,16 @@ export const Header = ({ paddingLeft }: { paddingLeft: string }) => {
         </TitleContainer>
         <ButtonRow>
           <IconButton>
-            <BellIcon className="w-5 h-5 mx-auto " />
+            <BellIcon className="w-6 h-6 mx-auto dark:text-white" />
           </IconButton>
           <IconButton onClick={toggleTheme}>
             {colorTheme === 'dark' ? (
-              <MoonIcon className="w-5 h-5 mx-auto " />
+              <MoonIcon className="w-6 h-6 mx-auto dark:text-white" />
             ) : (
-              <SunIcon className="w-5 h-5 mx-auto" />
+              <SunIcon className="w-6 h-6 mx-auto dark:text-white" />
             )}
           </IconButton>
+
           <PopoverUser />
         </ButtonRow>
       </HeaderContent>

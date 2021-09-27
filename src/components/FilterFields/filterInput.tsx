@@ -1,10 +1,10 @@
-import { InputHTMLAttributes, RefObject } from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import { InputHTMLAttributes, RefObject } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
 
 const InputContainer = styled.div`
   ${tw`
-    my-1
+    mb-1 mt-2
   `};
 `;
 

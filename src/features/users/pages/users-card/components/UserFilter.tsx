@@ -62,11 +62,16 @@ export const UserFilter = ({ filter, onChange, onSearchChange }: UserFiltersProp
 
   return (
     <div className="mt-6  flex flex-row flex-wrap text-xs">
-      <div className="w-1/2 pr-2   mb-6 md:mb-4">
+      <div className="w-1/2 xl:w-1/4 pr-2   mb-6 md:mb-4">
         <FilterInputLabel type="search" id="query" text="by username" />
-        <FilterInput id="query" forwardRef={queryRef} onChange={handleSearchChange} />
+        <FilterInput
+          id="query"
+          placeholder="Search user by name"
+          forwardRef={queryRef}
+          onChange={handleSearchChange}
+        />
       </div>
-      <div className="w-1/2  md:w-1/4 pl-2  mb-6 md:mb-0">
+      <div className="w-1/2  md:w-1/3 xl:w-1/5 pl-2  mb-6 md:mb-0">
         <FilterInputLabel id="status" text="by Status" />
         <FilterListBox options={USER_STATUS_OPTIONS} onChange={handleStatusChange} />
       </div>

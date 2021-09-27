@@ -1,6 +1,7 @@
 import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import authReducer from 'features/auth/_redux/authSlice';
+import orderReducer from 'features/oms/_redux/orderSlice';
 import userReducer from 'features/users/_redux/userSlice';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   counter: counterReducer,
   auth: authReducer,
   user: userReducer,
+  order: orderReducer,
 });
 
 const pReducer = persistReducer(rootPersistConfig, rootReducer);

@@ -1,10 +1,10 @@
-import { USER_ENDPOINT } from 'api/user.api';
+import { USER_ENDPOINT } from 'api';
 import MockAdapter from 'axios-mock-adapter';
 import { userTableMock } from 'features/auth/__mocks__/userTableMock';
 import { chunk, findIndex } from 'lodash';
 import { ListParams } from 'models';
 import moment from 'moment';
-import { makeid } from 'utils/helper';
+import { makeid } from 'utils';
 
 export default function mockUser(mock: MockAdapter) {
   mock.onGet(`${USER_ENDPOINT}/getFull`).reply((config) => {
@@ -14,12 +14,10 @@ export default function mockUser(mock: MockAdapter) {
     const params: ListParams = config.params;
     let filterList = [...userTableMock];
     if (params.name_like) {
-      console.log('filter name');
       filterList = filterList.filter((user) => user.username.includes(params.name_like));
     }
 
     if (params.status) {
-      console.log('filter status');
       if (params.status === 'active') {
         filterList = filterList.filter((user) => !user.isDisabled);
       }

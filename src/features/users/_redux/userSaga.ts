@@ -1,6 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { userApi } from 'api/user.api';
-
+import { userApi } from 'api';
 import { ListParams, ListResponse, User } from 'models';
 import { call, debounce, put, takeLatest } from 'redux-saga/effects';
 import { userActions } from './userSlice';

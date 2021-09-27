@@ -1,6 +1,5 @@
-import { userApi } from 'api/user.api';
-import { useAppDispatch, useAppSelector } from 'app/hooks';
-import { Button } from 'components/common';
+import { userApi } from 'api';
+import { useAppDispatch, useAppSelector } from 'store';
 import { userActions } from 'features/users/_redux/userSlice';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';

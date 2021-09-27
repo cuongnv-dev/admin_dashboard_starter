@@ -6,9 +6,9 @@ import tw from 'twin.macro';
 
 const SelectContainer = styled.div`
   ${tw`
-    border 
-    border-gray-200 
-    rounded-lg 
+    border
+    border-gray-200
+    rounded-lg
     my-1
   `}
 `;

@@ -23,8 +23,6 @@ export function checkIsActive(location: Location<unknown>, url: string) {
   return false;
 }
 
-
-
 export function makeid(length: number) {
   var result = '';
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import styled from "styled-components";
+import tw from "twin.macro";
 
 export const PageContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div className="p-4 md:p-6 overflow-y-auto h-full mt-14">{children}</div>;
+  return (
+    <div className="p-4 md:p-6 overflow-y-auto h-full mt-14">{children}</div>
+  );
 };
 
 export const PageContent = styled.div`
@@ -12,7 +14,7 @@ export const PageContent = styled.div`
     shadow-sm
     pb-10
     px-6
-    dark:bg-black-dark
+    dark:bg-black-lighter
   `}
 `;
 export const PageHeaderContainer = styled.div`
@@ -29,6 +31,6 @@ export const PageHeaderContainer = styled.div`
 
 export const PageTitle = styled.p`
   ${tw`
-    font-semibold
+    font-semibold dark:text-white
   `}
 `;

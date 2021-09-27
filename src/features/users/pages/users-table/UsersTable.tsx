@@ -1,6 +1,5 @@
-import { useAppDispatch, useAppSelector } from 'app/hooks';
+import { useAppDispatch, useAppSelector } from 'store';
 import { Badge } from 'components/common';
-import { CheckBox } from 'components/FormFields';
 import { CustomTable, TableItemActions } from 'components/Layout';
 import { useUsersUIContext } from 'features/users/_hook/userUIContext';
 import { userActions } from 'features/users/_redux/userSlice';
@@ -59,9 +58,9 @@ export const UsersTable = () => {
 
   const renderBody = (item: User, index: number) => (
     <tr
-      className={`text-xs h-14  ${
+      className={`text-sm h-14  ${
         index !== 0 ? 'border-t border-gray-200 dark:border-gray-700' : ''
-      }  ${index % 2 === 0 ? 'bg-gray-50 dark:bg-black-dark' : ''}`}
+      }  ${index % 2 === 0 ? 'bg-gray-50 dark:bg-black-lighter-2 dark:bg-opacity-50' : ''}`}
       key={index}
     >
       {/* <td>
