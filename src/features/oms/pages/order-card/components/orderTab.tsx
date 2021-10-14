@@ -22,6 +22,8 @@ export const OrderTab = ({ filter, onChange, count }: OrderTabProps) => {
 
   const handleStatusChange = (status: string) => {
     setActiveStatus(status);
+    console.log('status::', status);
+
     if (!onChange) return;
     const newFilter: ListParams = {
       ...filter,

@@ -60,7 +60,6 @@ export const AddEditUserPage = () => {
         // Redirect back to student list
         history.push('/users');
       } catch (error) {
-        console.log(error.response);
         toast.error('This email has not existed');
       }
     } else {

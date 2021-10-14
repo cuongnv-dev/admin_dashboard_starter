@@ -19,7 +19,7 @@ const initialState: OrderState = {
   count: {
     all: 0,
     cancelled: 0,
-    completed: 0,
+    done: 0,
     new: 0,
     processing: 0,
   },

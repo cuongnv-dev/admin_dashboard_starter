@@ -58,7 +58,7 @@ export const UsersTable = () => {
 
   const renderBody = (item: User, index: number) => (
     <tr
-      className={`text-sm h-14  ${
+      className={`text-xs h-10  ${
         index !== 0 ? 'border-t border-gray-200 dark:border-gray-700' : ''
       }  ${index % 2 === 0 ? 'bg-gray-50 dark:bg-black-lighter-2 dark:bg-opacity-50' : ''}`}
       key={index}

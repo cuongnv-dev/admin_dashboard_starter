@@ -71,7 +71,7 @@ export const CustomTable = ({
   return (
     <TableContainer>
       <CustomBarLoader loading={loading} width={'100%'} height={2} />
-      <p className="visible lg:invisible text-sm">
+      <p className="visible md:invisible text-sm">
         Showing row {currentPage * limit - 9} to {currentPage * limit} of {totalRows}
       </p>
       <Table>

@@ -13,6 +13,6 @@ export interface OrderCount {
   all: number;
   new: number;
   processing: number;
-  completed: number;
+  done: number;
   cancelled: number;
 }

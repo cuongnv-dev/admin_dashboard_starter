@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 
 export const TableContainer = styled.div`
   ${tw`
-    overflow-y-auto overflow-x-auto pb-6
+    overflow-y-auto overflow-x-auto
   `};
 `;
 
@@ -14,13 +14,13 @@ export const Table = styled.table`
 `;
 
 export const TableHeader = styled.thead`
-  ${tw`h-14`}
+  ${tw`h-10`}
 `;
 
 export const TableBody = styled.tbody``;
 
 export const PaginationContainer = styled.div`
-  ${tw`py-6  text-sm flex  flex-col lg:flex-row justify-between lg:items-center`}
+  ${tw`py-6  text-sm flex  flex-col md:flex-row justify-between md:items-center`}
 `;
 
 export const PaginationButtonGroup = styled.div`
@@ -70,5 +70,5 @@ export const LoadingText = styled.span`
 `;
 
 export const PageInfo = styled.div`
-  ${tw`invisible lg:visible`}
+  ${tw`invisible md:visible`}
 `;

@@ -10,6 +10,7 @@ function* fetchOrderList(action: PayloadAction<ListParams>) {
       data: call(orderApi.getAll, action.payload),
       count: call(orderApi.getCount),
     });
+    console.log(`count`, count);
     yield put(orderActions.fetchOrderListSuccess({ data: data, count }));
   } catch (error) {
     console.log('Failed to fetch order list', error);

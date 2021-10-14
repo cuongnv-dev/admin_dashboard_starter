@@ -22,7 +22,7 @@ export const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     <Screen>
       {!isMobile && <Aside />}
       <Header paddingLeft={pl} />
-      <div className={`${pl} flex-1 overflow-hidden h-full pt-6 pb-8 `}>{children}</div>
+      <div className={`${pl} flex-1 overflow-hidden h-full pb-8 `}>{children}</div>
     </Screen>
   );
 };

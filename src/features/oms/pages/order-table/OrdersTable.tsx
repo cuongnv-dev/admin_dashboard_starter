@@ -7,6 +7,8 @@ import tw from 'twin.macro';
 import { useOmsUIContext } from '../../_hook/omsUIContext';
 import { OrderTableHeader } from './components/OrderTableHeader';
 import { orderActions } from '../../_redux/orderSlice';
+import { OrderItemActions } from './components/OrderItemActions';
+import { Badge } from 'components/common';
 
 export const TableRow = styled.tr`
   ${tw``}
@@ -40,40 +42,46 @@ export const OrdersTable = () => {
     );
   };
 
-  const renderBody = (item: Order, index: number) => (
-    <tr
-      className={`text-sm h-14  ${
-        index !== 0 ? 'border-t border-gray-200 dark:border-gray-700' : ''
-      }  ${index % 2 === 0 ? 'bg-gray-50 dark:bg-black-lighter-2 dark:bg-opacity-50' : ''}`}
-      key={index}
-    >
-      {/* <td>
-        <CheckBox
-          value={item.id}
-          onClick={itemChecked}
-          checked={usersUIProps.ids.includes(item.id || '')}
-        />
-      </td> */}
-      <td className="pr-3 pl-4">{item.id}</td>
-      <td className="pr-3">{item.channel}</td>
-      <td className="pr-3">{item.store}</td>
-      <td className="pr-3">{item.customerName}</td>
-      <td className="pr-3">{item.phoneNumber}</td>
-      <td className="pr-3">{item.orderTime}</td>
+  const renderBody = (item: Order, index: number) => {
+    let badge = 'success';
+    switch (item.status) {
+      case 'new':
+        badge = 'info';
+        break;
+      case 'processing':
+        badge = 'warning';
+        break;
+      case 'canceled':
+        badge = 'danger';
+        break;
+      default:
+        break;
+    }
 
-      <td className="pr-3">{item.deliveryDate}</td>
-
-      <td className="pr-3">{item.deliveryTime}</td>
-
-      <td className="pr-3">{item.status}</td>
-      <td>
-        <TableItemActions
-          editLink={`/orders/${item.id}/edit`}
-          deleteLink={`/orders/${item.id}/delete`}
-        />
-      </td>
-    </tr>
-  );
+    return (
+      <tr
+        className={`text-xs h-10  ${
+          index !== 0 ? 'border-t border-gray-200 dark:border-gray-700' : ''
+        }  ${index % 2 === 0 ? 'bg-gray-50 dark:bg-black-lighter-2 dark:bg-opacity-50' : ''}`}
+        key={index}
+      >
+        <td className="pr-3 pl-4">{item.id}</td>
+        <td className="pr-3">{item.channel}</td>
+        <td className="pr-3">{item.store}</td>
+        <td className="pr-3">{item.customerName}</td>
+        <td className="pr-3">{item.phoneNumber}</td>
+        <td className="pr-3">{item.orderTime}</td>
+        <td className="pr-3">{item.deliveryDate}</td>
+        <td className="pr-3">{item.deliveryTime}</td>
+        <td className="pr-3">
+          <Badge preset={badge as any} label={item.status} />
+        </td>
+        <td>
+          <OrderItemActions item={item} />
+        </td>
+      </tr>
+    );
+  };
 
   return (
     <CustomTable

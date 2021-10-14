@@ -10,7 +10,7 @@ const BaseButton = styled.button`
     flex-row
     justify-center
     items-center
-    h-10
+    h-8
     px-4
     outline-none
     bg-green-500
@@ -33,6 +33,16 @@ const PrimaryButton = styled(BaseButton)`
   `}
 `;
 
+const DangerButton = styled(BaseButton)`
+  ${tw`
+    bg-red-500
+    hover:bg-red-600
+    text-white
+    hover:shadow
+    disabled:opacity-50
+  `}
+`;
+
 const OutlineButton = styled(BaseButton)`
   ${tw`
     bg-transparent
@@ -43,6 +53,12 @@ const OutlineButton = styled(BaseButton)`
     border-gray-200
     dark:border-gray-700
     dark:hover:bg-gray-700
+  `}
+`;
+
+const OutlineWhiteButton = styled(OutlineButton)`
+  ${tw`
+    bg-white
   `}
 `;
 
@@ -65,6 +81,13 @@ export const Button = ({
       </OutlineButton>
     );
 
+  if (preset === 'outline-white')
+    return (
+      <OutlineWhiteButton disabled={loading} onClick={onClick}>
+        <div className="flex flex-row">{child}</div>
+      </OutlineWhiteButton>
+    );
+
   if (preset === 'link') {
     return (
       <PrimaryButton>
@@ -73,6 +96,21 @@ export const Button = ({
           {loading && <Spinner loading={true} />}
         </div>
       </PrimaryButton>
+    );
+  }
+
+  if (preset === 'danger') {
+    return (
+      <DangerButton disabled={loading} onClick={onClick}>
+        <div className="flex flex-row items-center">
+          {child}
+          {loading && (
+            <div className="ml-2">
+              <Spinner loading={true} size={6} color="white" />
+            </div>
+          )}
+        </div>
+      </DangerButton>
     );
   }
 

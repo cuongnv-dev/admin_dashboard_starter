@@ -73,7 +73,7 @@ export const OrderFilter = ({ filter, onChange, onSearchChange }: OrderFiltersPr
           onChange={handleSearchChange}
         />
       </div>
-      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pr-2 lg:w-1/3 lg:px-2">
+      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pr-2 lg:w-1/3 lg:pl-2">
         <FilterInputLabel type="search" id="username" text="by user name" />
         <FilterInput
           id="username"
@@ -83,15 +83,15 @@ export const OrderFilter = ({ filter, onChange, onSearchChange }: OrderFiltersPr
         />
       </div>
 
-      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pr-2 lg:w-1/3">
+      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pl-2 lg:w-1/3">
         <FilterInputLabel id="date" text="by Date" />
         <FilterListBox options={USER_STATUS_OPTIONS} onChange={handleStatusChange} />
       </div>
-      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pl-2 lg:w-1/3 lg:px-2">
+      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pr-2 lg:w-1/3 lg:px-2">
         <FilterInputLabel id="channel" text="by Channel" />
         <FilterListBox options={USER_STATUS_OPTIONS} onChange={handleStatusChange} />
       </div>
-      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pr-2 lg:w-1/3 lg:px-2">
+      <div className="w-full mb-6 md:w-1/2 md:mb-4 md:pl-2 lg:w-1/3 lg:pl-2">
         <FilterInputLabel id="store" text="by Store" />
         <FilterListBox options={USER_STATUS_OPTIONS} onChange={handleStatusChange} />
       </div>

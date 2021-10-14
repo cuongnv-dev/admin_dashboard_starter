@@ -1,8 +1,8 @@
-import { ORDER_ENDPOINT } from "api";
-import { ListParams } from "models";
-import MockAdapter from "axios-mock-adapter";
-import { chunk } from "lodash";
-import { orderTableMock } from "./orderTableMock";
+import { ORDER_ENDPOINT } from 'api';
+import { ListParams } from 'models';
+import MockAdapter from 'axios-mock-adapter';
+import { chunk } from 'lodash';
+import { orderTableMock } from './orderTableMock';
 
 export default function mockOrder(mock: MockAdapter) {
   mock.onGet(`${ORDER_ENDPOINT}/getFull`).reply((config) => {
@@ -10,22 +10,20 @@ export default function mockOrder(mock: MockAdapter) {
   });
   mock.onGet(`${ORDER_ENDPOINT}/count`).reply((config) => {
     const newCount = orderTableMock.reduce(
-      (counter, { status }) => (status === "new" ? (counter += 1) : counter),
+      (counter, { status }) => (status === 'new' ? (counter += 1) : counter),
       0
     );
     const processing = orderTableMock.reduce(
-      (counter, { status }) =>
-        status === "processing" ? (counter += 1) : counter,
+      (counter, { status }) => (status === 'processing' ? (counter += 1) : counter),
       0
     );
 
-    const completed = orderTableMock.reduce(
-      (counter, { status }) => (status === "done" ? (counter += 1) : counter),
+    const done = orderTableMock.reduce(
+      (counter, { status }) => (status === 'done' ? (counter += 1) : counter),
       0
     );
     const canceled = orderTableMock.reduce(
-      (counter, { status }) =>
-        status === "canceled" ? (counter += 1) : counter,
+      (counter, { status }) => (status === 'canceled' ? (counter += 1) : counter),
       0
     );
 
@@ -35,7 +33,7 @@ export default function mockOrder(mock: MockAdapter) {
         all: orderTableMock.length,
         new: newCount,
         processing,
-        completed,
+        done,
         canceled,
       },
     ];
@@ -44,21 +42,15 @@ export default function mockOrder(mock: MockAdapter) {
     const params: ListParams = config.params;
     let filterList = [...orderTableMock];
     if (params.name_like) {
-      filterList = filterList.filter((order) =>
-        order.customerName.includes(params.name_like)
-      );
+      filterList = filterList.filter((order) => order.customerName.includes(params.name_like));
     }
 
     if (params.code_like) {
-      filterList = filterList.filter((order) =>
-        order.id.includes(params.code_like)
-      );
+      filterList = filterList.filter((order) => order.id.includes(params.code_like));
     }
 
     if (params.phone_like) {
-      filterList = filterList.filter((order) =>
-        order.phoneNumber.includes(params.phone_like)
-      );
+      filterList = filterList.filter((order) => order.phoneNumber.includes(params.phone_like));
     }
 
     if (params.store) {
@@ -66,25 +58,21 @@ export default function mockOrder(mock: MockAdapter) {
     }
 
     if (params.channel) {
-      filterList = filterList.filter(
-        (order) => (order.channel = params.channel)
-      );
+      filterList = filterList.filter((order) => (order.channel = params.channel));
     }
 
     if (params.status) {
-      if (params.status === "new") {
-        filterList = filterList.filter((order) => order.status === "new");
+      if (params.status === 'new') {
+        filterList = filterList.filter((order) => order.status === 'new');
       }
-      if (params.status === "processing") {
-        filterList = filterList.filter(
-          (order) => order.status === "processing"
-        );
+      if (params.status === 'processing') {
+        filterList = filterList.filter((order) => order.status === 'processing');
       }
-      if (params.status === "completed") {
-        filterList = filterList.filter((order) => order.status === "completed");
+      if (params.status === 'done') {
+        filterList = filterList.filter((order) => order.status === 'done');
       }
-      if (params.status === "canceled") {
-        filterList = filterList.filter((order) => order.status === "canceled");
+      if (params.status === 'canceled') {
+        filterList = filterList.filter((order) => order.status === 'canceled');
       }
     }
 

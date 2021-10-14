@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react';
 
 export interface OmsUIEvent {
   newOrderButtonClick: () => void;
@@ -43,7 +43,5 @@ export function OmsUIProvider({ omsUIEvents, children }: OmsUIProviderProps) {
     openDeleteOrderDialog: omsUIEvents.openDeleteOrderDialog,
   };
 
-  return (
-    <OmsUIContext.Provider value={value}>{children}</OmsUIContext.Provider>
-  );
+  return <OmsUIContext.Provider value={value}>{children}</OmsUIContext.Provider>;
 }
